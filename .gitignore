@@ -1,0 +1,12 @@
+# Snakemake cache
+.snakemake/
+
+# Pipeline outputs (large files, reproducible from the pipeline)
+Data/output_COI/
+
+# R temporary files
+*.Rhistory
+*.RData
+
+# Logs
+logs/
