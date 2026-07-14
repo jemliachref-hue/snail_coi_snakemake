@@ -109,6 +109,29 @@ conda install -c bioconda bioconductor-biostrings bioconductor-decipher \
 > **Note:** Installing `ggtree` via conda (Bioconda) is strongly recommended over `BiocManager::install()` to avoid version mismatch errors with `treeio`.
 
 ---
+---
+
+## Running with Docker (Recommended)
+
+The pipeline is fully containerized, so you can skip the manual conda/R installation steps entirely.
+
+**1. Build the image:**
+```bash
+docker build -t snail-coi-pipeline .
+```
+
+**2. Run the full pipeline:**
+```bash
+docker run --rm snail-coi-pipeline
+```
+
+This builds a self-contained image (based on `condaforge/miniforge3`) with Snakemake, R, and all Bioconductor/CRAN dependencies pre-installed, and runs the complete 11-rule DAG inside an isolated container — no local environment setup required.
+
+> Note: outputs are written inside the container's filesystem by default and are discarded when the container exits (`--rm`). To persist results on your host machine, mount a local folder:
+> ```bash
+> docker run --rm -v $(pwd)/Data/output_COI:/pipeline/Data/output_COI snail-coi-pipeline
+> ```
+----
 
 ## Running the Pipeline
 
