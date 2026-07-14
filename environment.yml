@@ -1,0 +1,18 @@
+name: snail-coi
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - snakemake-minimal
+  - r-base
+  - r-rentrez
+  - r-dplyr
+  - r-stringr
+  - r-tibble
+  - r-readr
+  - r-ape
+  - r-phangorn
+  - r-ggplot2
+  - bioconductor-biostrings
+  - bioconductor-decipher
+  - bioconductor-ggtree
